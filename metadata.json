@@ -1,0 +1,8 @@
+{
+  "name": "beuld",
+  "creator": "lohhiiccc",
+  "description": "add random features",
+  "version": "0.0.1",
+  "entry": "index.js",
+  "requires":["BloomCore", "Vigilance", "VolcAddons"]
+}
