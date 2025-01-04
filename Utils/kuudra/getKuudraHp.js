@@ -1,5 +1,5 @@
 import { registerWhen } from "../../../BloomCore/utils/Utils"
-import  location from "../../../VolcAddons/utils/Location"
+import  location from "../location"
 import {squaredDist} from "../math/squaredDistance";
 
 export function getKuudraHP() { return kHP; }
