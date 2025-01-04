@@ -1,8 +1,8 @@
 
-import Settings from "../../config";
-import {squaredDist} from "../../Utils/math/squaredDistance";
-import {registerWhen} from "../../../BloomCore/utils/Utils";
-import location from "../../Utils/location";
+import Settings from "../../../config";
+import {squaredDist} from "../../../Utils/math/squaredDistance";
+import {registerWhen} from "../../../../BloomCore/utils/Utils";
+import location from "../../../Utils/location";
 
 registerWhen(register('step', () => {
     const entity = World.getAllEntities().filter(entity => entity.getName().removeFormatting().includes("PROGRESS:"));

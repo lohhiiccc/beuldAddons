@@ -35,9 +35,6 @@ class Location {
             this.#world = undefined;
         });
 
-        register("command", () => {
-            this.test();
-        }).setName("worldTest");
     }
 
     /**

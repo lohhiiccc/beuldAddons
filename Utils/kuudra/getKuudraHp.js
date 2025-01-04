@@ -7,6 +7,7 @@ export function getKPhase() { return kPhase; } // only dps and supplies detected
 export function getDpsStartTime() { return dpsStartTime; }
 
 export const Phase = Object.freeze({
+    ENDED: -1,
     SUPPLIES: 0,
     BUILD: 1,
     STUN: 2,
@@ -40,7 +41,6 @@ register("chat", () => {
 
 registerWhen( // bad way to detect when skip ended
     register('tick', () => {
-        console.log("fewiufehwi")
         if (squaredDist(Player.getX(), Player.getY(), Player.getX(), -102, 6, -104) < 50) { //196 == (platform radius / 2) ^ 2
             dpsStartTime = Date.now();
             kPhase = Phase.DPS;
@@ -54,3 +54,6 @@ register("chat", () => {
     console.log("phase = supplies");
 }).setCriteria("[NPC] Elle: Okay adventurers, I will go and fish up Kuudra!")
 
+register("worldLoad", () => {
+    kPhase = Phase.ENDED;
+}).setPriority(Priority.LOWEST);

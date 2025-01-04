@@ -38,6 +38,24 @@ class Settings {
     })
     rendPullToggle = true;
 
+    @SwitchProperty({
+        name: "DPS format",
+        description: "format chat during DPS in kuudra",
+        category: "Kuudra",
+        subcategory: "DPS",
+        placeholder: "Activate"
+    })
+    dpsFormatterToggle = true;
+
+    @SwitchProperty({
+        name: "BackBone alert",
+        description: "show backbone hit in chat",
+        category: "Kuudra",
+        subcategory: "DPS",
+        placeholder: "Activate",
+    })
+    backBoneToggle = true;
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("Cosmetic", "--")
