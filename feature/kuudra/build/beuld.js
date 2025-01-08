@@ -4,7 +4,9 @@ import {squaredDist} from "../../../utils/math/squaredDistance";
 import {registerWhen} from "../../../../BloomCore/utils/Utils";
 import location from "../../../utils/location";
 
-registerWhen(register('step', () => {
+register('step', () => {
+    if (!location.getWorld() === "Kuudra" && !Settings.BeuldIndicator) return;
+
     const entity = World.getAllEntities().filter(entity => entity.getName().removeFormatting().includes("PROGRESS:"));
     if (!entity.length) { return ; }
     let closestEntity = entity[0];
@@ -17,4 +19,4 @@ registerWhen(register('step', () => {
         }
     }
     Client.showTitle(` `, closestEntity.getName(), 0, 1, 0);
-}).setFps(1), () => location.getWorld() === "Kuudra" && Settings.BeuldIndicator)
+}).setFps(5);

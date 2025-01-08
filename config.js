@@ -59,6 +59,14 @@ class Settings {
     })
     PCAreaToggle = false;
 
+    @SwitchProperty({
+        name: "pearl waypoint",
+        description: "display only useful pearl waypoint",
+        category: "Kuudra",
+        subcategory: "supplies",
+    })
+    pearlwaypointtoggle = false;
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("Cosmetic", "")
