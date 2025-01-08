@@ -1,8 +1,8 @@
-import {getKPhase, getKuudraHP, Phase, getDpsStartTime} from "../../../Utils/kuudra/getKuudraHp";
+import {getKPhase, getKuudraHP, Phase, getDpsStartTime} from "../../../utils/kuudra/getKuudraHp";
 import { registerWhen } from "../../../../BloomCore/utils/Utils";
 import Settings from "../../../config"
-import location from "../../../Utils/location";
-import { formatDamage } from "../../../Utils/format/damage";
+import location from "../../../utils/location";
+import { formatDamage } from "../../../utils/format/damage";
 
 function colorPull(damage) {
     if (damage > 20e6 && damage < 40e6) {

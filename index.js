@@ -1,9 +1,10 @@
 import Settings from "./config";
 
-import "./feat/aotv";
-import "./feat/kuudra/build/beuld";
-import "./feat/kuudra/dps/rend";
-import "./feat/kuudra/dps/dpsFormater";
-import "./feat/kuudra/dps/backBone"
+import "./feature/aotv";
+import "./feature/kuudra/build/beuld";
+import "./feature/kuudra/dps/rend";
+import "./feature/kuudra/dps/dpsFormater";
+import "./feature/kuudra/dps/backBone"
+import "./feature/kuudra/sup/waypoint"
 
 register("command", () => Settings.openGUI()).setName("beuld");

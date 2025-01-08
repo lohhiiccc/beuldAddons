@@ -8,11 +8,10 @@ class Settings {
         description: "edit etherwarp sound.",
         category: "Cosmetic",
         subcategory: "Aspect of the void",
-        placeholder: "Activate",
     })
-    AotvSoundToggle = true;
+    AotvSoundToggle = false;
     @TextProperty({
-        name: "Set etherwarp sound",
+        name: "custom etherwarp sound",
         description: "use minecraft sound id",
         category: "Cosmetic",
         subcategory: "Aspect of the void",
@@ -21,49 +20,54 @@ class Settings {
     AotvSound = "random.successful_hit";
 
     @SwitchProperty({
-        name: "Beul indicator",
-        description: "/title current piles percentage",
+        name: "Build indicator",
+        description: "display current piles percentage",
         category: "Kuudra",
         subcategory: "beuld",
-        placeholder: "Activate",
     })
-    BeuldIndicator = true;
+    BeuldIndicator = false;
 
     @SwitchProperty({
         name: "rend pull",
         description: "show rend pull",
         category: "Kuudra",
         subcategory: "DPS",
-        placeholder: "Activate",
     })
-    rendPullToggle = true;
+    rendPullToggle = false;
 
     @SwitchProperty({
         name: "DPS format",
         description: "format chat during DPS in kuudra",
         category: "Kuudra",
         subcategory: "DPS",
-        placeholder: "Activate"
     })
-    dpsFormatterToggle = true;
+    dpsFormatterToggle = false;
 
     @SwitchProperty({
         name: "BackBone alert",
         description: "show backbone hit in chat",
         category: "Kuudra",
         subcategory: "DPS",
-        placeholder: "Activate",
     })
-    backBoneToggle = true;
+    backBoneToggle = false;
+
+    @SwitchProperty({
+        name: "Pearl Cancel area",
+        description: "show some pearl cancel area",
+        category: "Kuudra",
+        subcategory: "supplies",
+    })
+    PCAreaToggle = false;
 
     constructor() {
         this.initialize(this);
-        this.setCategoryDescription("Cosmetic", "--")
-        this.setSubcategoryDescription("Cosmetic", "Aspect of the void", "..")
+        this.setCategoryDescription("Cosmetic", "")
+        this.setSubcategoryDescription("Cosmetic", "Aspect of the void", "")
 
         this.setCategoryDescription("Kuudra", "kuudra stuff")
-        this.setSubcategoryDescription("Kuudra", "beuld", "beuld is build")
-        this.setSubcategoryDescription("Kuudra", "DPS", "dps phase")
+        this.setSubcategoryDescription("kuudra", "supplies", "")
+        this.setSubcategoryDescription("Kuudra", "build", "")
+        this.setSubcategoryDescription("Kuudra", "DPS", "")
     }
 }
 export default new Settings();

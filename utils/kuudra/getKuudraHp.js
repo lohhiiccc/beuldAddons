@@ -3,7 +3,7 @@ import  location from "../location"
 import {squaredDist} from "../math/squaredDistance";
 
 export function getKuudraHP() { return kHP; }
-export function getKPhase() { return kPhase; } // only dps and supplies detected rn
+export function getKPhase() { return kPhase; } // only  supplies skip and dps detected rn
 export function getDpsStartTime() { return dpsStartTime; }
 
 export const Phase = Object.freeze({
@@ -41,7 +41,7 @@ register("chat", () => {
 
 registerWhen( // bad way to detect when skip ended
     register('tick', () => {
-        if (squaredDist(Player.getX(), Player.getY(), Player.getX(), -102, 6, -104) < 50) { //196 == (platform radius / 2) ^ 2
+        if (squaredDist(Player.getX(), Player.getY(), Player.getX(), -102, 6, -104) < 50) {
             dpsStartTime = Date.now();
             kPhase = Phase.DPS;
             console.log("skip ended");

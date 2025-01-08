@@ -1,5 +1,5 @@
 import {registerWhen} from "../../../../BloomCore/utils/Utils"
-import {getDpsStartTime, getKPhase, Phase} from "../../../Utils/kuudra/getKuudraHp";
+import {getDpsStartTime, getKPhase, Phase} from "../../../utils/kuudra/getKuudraHp";
 import Settings from "../../../config";
 
 let count = 0;
@@ -17,11 +17,11 @@ registerWhen(register("SoundPlay", (a, b, c, d, e, f) => {
     if (count === 1) {
         count = 2;
         console.log("Count: " + count);
-        ChatLib.chat(`&l[${((Date.now() - getDpsStartTime()) / 1000).toFixed(1)}s]&r&8[BackBone] ⇾ &a${Player.getHeldItem().getName()})`);
+        ChatLib.chat(`&l[${((Date.now() - getDpsStartTime()) / 1000).toFixed(1)}s]&r&8[BackBone] ⇾ &a${Player.getHeldItem().getName()}`);
     }
 
 }).setCriteria("tile.piston.out"), () => Settings.backBoneToggle && getKPhase() == Phase.DPS);
 
-register('worldUnload', () => {
+register("worldLoad", () => {
     count = 0;
-})
+}).setPriority(Priority.LOWEST);
