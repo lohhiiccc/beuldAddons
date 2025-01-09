@@ -31,11 +31,3 @@ export function isPlayerLookingAtSphere(playerYaw, playerPitch, playerPos, spher
 
     return disc > 0;
 }
-
-// register("command", () => {
-//     const playerYaw = Player.getYaw();
-//     const playerPitch = Player.getPitch();
-//     const playerPos = { x: Player.getX(), y: Player.getY() + 1, z: Player.getZ() };
-//     const isLooking = isPlayerLookingAtSphere(playerYaw, playerPitch, playerPos, {x: -147, y: 75, z: -95 }, 2);
-//     ChatLib.chat(isLooking);
-// }).setName("intersectSphere");
