@@ -25,7 +25,7 @@ class Settings {
         category: "Kuudra",
         subcategory: "beuld",
     })
-    BeuldIndicator = false;
+    beuldIndicator = false;
 
     @SwitchProperty({
         name: "rend pull",
@@ -66,6 +66,14 @@ class Settings {
         subcategory: "supplies",
     })
     pearlwaypointtoggle = false;
+
+    @SwitchProperty({
+        name: "hilight pile",
+        description: "hilight supply pile",
+        category: "Kuudra",
+        subcategory: "build",
+    })
+    hilightPileToggle = false;
 
     constructor() {
         this.initialize(this);
