@@ -1,22 +1,10 @@
 import Settings from "../../../config"
-import RenderLib from "../../../../RenderLib/index";
 import { registerWhen } from '../../../../BloomCore/utils/Utils'
 import {getKPhase, Phase} from "../../../utils/kuudra/getKuudraHp";
 import { coord3D, coord2D } from "../../../utils/math/Coord";
 import {twoDSquaredDist, squaredDist} from "../../../utils/math/squaredDistance";
-import {drawEqual, drawSlash, drawSquare, drawTri, drawX} from "./waypointFuncs";
+import {drawEqual, drawSlash, drawSquare, drawTri, drawX, supplies} from "./waypointFuncs";
 
-const supplies = Object.freeze({
-    CIRCLE: -1,
-    SQUARE: 10,
-    SLASH: 1,
-    TRIANGLE: 2,
-    EQUAL: 3,
-    X: 4,
-    X_CANNON: 5,
-    SHOP: 6,
-    UNKNOWN: 7,
-})
 
 
 class SuppliesCoord {
@@ -34,7 +22,7 @@ const supTab = [
     new SuppliesCoord(supplies.X,          new coord2D(-134, -135), 15),
     new SuppliesCoord(supplies.SLASH,      new coord2D(-111, -70), 10),
     new SuppliesCoord(supplies.EQUAL,      new coord2D(-66, -90), 15),
-    new SuppliesCoord(supplies.TRIANGLE,   new coord2D(-68, -122), 10),
+    new SuppliesCoord(supplies.TRIANGLE,   new coord2D(-68, -122), 18),
     new SuppliesCoord(supplies.SHOP,     new coord2D(-88, -125), 10)
 ]
 
@@ -54,7 +42,7 @@ register('step', () => {
 
         if (twoDSquaredDist(Player.getX(), Player.getZ(), s.coord.x, s.coord.y) <= s.dist) {
             wp.push(s.name);
-            ChatLib.chat(s.name)
+            // ChatLib.chat(s.name)
         } else {
         }
     })
@@ -90,4 +78,4 @@ registerWhen(
                     break;
             }
         })
-}), () => getKPhase() === Phase.SUPPLIES);
+ }), () => getKPhase() === Phase.SUPPLIES);

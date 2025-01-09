@@ -22,7 +22,7 @@ registerWhen(register('packetReceived', () => {
         let diff = health - getKuudraHP();
         if (diff > 2083) {
             diff *= 9600; // convert damage to real damage (100k => 240m)
-            ChatLib.chat(`&l[${((Date.now() - getDpsStartTime()) / 1000).toFixed(1)}s]&r ⇾ &apull: ${colorPull(diff)}${formatDamage(diff)}`);
+            ChatLib.chat(`&l[${((Date.now() - getDpsStartTime()) / 1000).toFixed(2)}s]&r ⇾ &apull: ${colorPull(diff)}${formatDamage(diff)}`);
             health = getKuudraHP();
             return;
         }
