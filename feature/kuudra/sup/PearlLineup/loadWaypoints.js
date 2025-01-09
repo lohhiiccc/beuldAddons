@@ -35,27 +35,27 @@ function loadSuppWaypoints() {
 let wpTab = []
 export function getPearWaypoints() {return wpTab}
 function loadPearlWaypoints() {
+    let t = [];
     const jsonFilePath = "feature/kuudra/sup/PearlLineup/PearlWaypoint.json";
     const jsonString = FileLib.read("beuld", jsonFilePath);
     if (!jsonString) {
-        console.error("error: cant open ", jsonFilePath);
+        console.error("error: can't open ", jsonFilePath);
         return;
     }
 
     try {
         const data = JSON.parse(jsonString);
 
-
-        wpTab = [];
-        console.log("waypoint:");
         data.pearlWaypoint.forEach((item) => {
-            const { x, y, z } = item.coordinate;
             const name = item.name;
-            supWpTab.forEach((i) => {
-                if (i.name === item.from) {
-                    wpTab.push(new PearWaypointClass(x, y, z, name, i))
+            const from = item.from;
+            const {x, y, z} = item.coordinate;
+            for (let i = 0; i < supWpTab.length; i++) {
+                if (supWpTab[i].name === from) {
+                    wpTab.push(new PearWaypointClass(x, y, z, name, supWpTab[i]));
                 }
-            })
+            }
+            console.log(x, y, z);
         });
     } catch (e) {
         console.error("error:", e);
