@@ -2,13 +2,12 @@
   "pearlWaypoint": [
     {
       "from": "equal",
-      "name": "balista",
+      "name": "",
       "coordinate": {
         "x": -106,
         "y": 165,
         "z": -101
-      },
-      "renderName": false
+      }
     },
     {
       "from": "equal",
@@ -17,8 +16,133 @@
         "x": -93,
         "y": 161,
         "z": -143
-      },
-      "renderName" : false
+      }
+    },
+    {
+      "from": "slash",
+      "name": "",
+      "coordinate": {
+        "x": -105,
+        "y": 157,
+        "z": -101
+      }
+    },
+    {
+      "from": "slash",
+      "name": "square",
+      "coordinate": {
+        "x": -141,
+        "y": 151,
+        "z": -91
+      }
+    },
+    {
+      "from": "square",
+      "name": "x",
+      "coordinate": {
+        "x": -43.5,
+        "y": 120,
+        "z": -149.5
+      }
+    },
+    {
+      "from": "square",
+      "name": "shop",
+      "coordinate": {
+        "x": -45.5,
+        "y": 135,
+        "z": -138.5
+      }
+    },
+    {
+      "from": "square",
+      "name": "tri",
+      "coordinate": {
+        "x": -35.5,
+        "y": 138,
+        "z": -124.5
+      }
+    },
+    {
+      "from": "square",
+      "name": "=",
+      "coordinate": {
+        "x": -26.5,
+        "y": 126,
+        "z": -111.5
+      }
+    },
+    {
+      "from": "tri",
+      "name": "",
+      "coordinate": {
+        "x": -95.5,
+        "y": 161,
+        "z": -105.5
+      }
+    },
+    {
+      "from": "tri",
+      "name": "shop",
+      "coordinate": {
+        "x": -84,
+        "y": 161,
+        "z": -128
+      }
+    },
+    {
+      "from": "tri",
+      "name": "X cannon",
+      "coordinate": {
+        "x": -175,
+        "y": 150,
+        "z": -130
+      }
+    },
+    {
+      "from": "shop1",
+      "name": "",
+      "coordinate": {
+        "x": -97,
+        "y": 157,
+        "z": -112
+      }
+    },
+    {
+      "from": "shop",
+      "name": "",
+      "coordinate": {
+        "x": -97,
+        "y": 157,
+        "z": -112
+      }
+    },
+     {
+       "from": "X",
+       "name": "X cannon",
+       "coordinate": {
+         "x": -132,
+         "y": 140,
+         "z": -120
+       }
+     },
+    {
+      "from": "X",
+      "name": "",
+      "coordinate": {
+        "x": -103,
+        "y": 160,
+        "z": -109
+      }
+    },
+    {
+      "from": "X cannon",
+      "name": "",
+      "coordinate": {
+        "x": -110,
+        "y": 155,
+        "z": -106
+      }
     }
   ]
 }

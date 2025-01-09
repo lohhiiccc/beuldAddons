@@ -1,5 +1,6 @@
 import RenderLib from "../../../../../RenderLib/index"
 import {squaredDist} from "../../../../utils/math/squaredDistance";
+import {isPlayerLookingAtSphere} from "../../../../utils/math/raytrace/isPlayerLookingAtSphere";
 
 export class SuppWaypointArea {
     constructor(x, y, z, r, g, b, dist, name) {
@@ -14,7 +15,7 @@ export class SuppWaypointArea {
     }
 
     render() {
-        RenderLib.drawEspBox(this.x, this.y, this.z, 1, 1, this.r, this.g, this.b, 1, true);
+        RenderLib.drawEspBox(this.x, this.y, this.z, 1, 1, this.r, this.g, this.b, 1, false);
     }
 }
 
@@ -31,13 +32,15 @@ export class PearWaypointClass {
 
     calcNeedRender() {
         this.needRender = (squaredDist(Player.getX(), 0, Player.getZ(), this.supWaypoint.x, 0, this.supWaypoint.z) <= this.supWaypoint.Sdist);
-        // ChatLib.chat(`calculate: for ${this.name} from: ${this.supWaypoint.name}: ${this.needRender}`)
+        this.rname = (isPlayerLookingAtSphere(Player.getYaw(), Player.getPitch(), {x: Player.getX(), y: Player.getY(), z: Player.getZ()}, {x: this.x, y: this.y, z: this.z}, 3.5))
     }
 
     render() {
         if (!this.needRender) return ;
         RenderLib.drawInnerEspBox(this.x, this.y, this.z, 1, 1, this.supWaypoint.r, this.supWaypoint.g, this.supWaypoint.b, 1, true);
-        if (this.rname || this.name === null || this.name === undefined) return false;
-        Tessellator.drawString(this.name, this.x, this.y, this.z, 0xff0000, true, 0.25, false);
+        if (this.name === null || this.name === undefined || this.name === "") return;
+        if (this.rname) {
+            Tessellator.drawString(this.name, this.x, this.y, this.z, 0xff0000, false, 1, false);
+        }
     }
 }
