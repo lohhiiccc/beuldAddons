@@ -1,0 +1,24 @@
+{
+  "pearlWaypoint": [
+    {
+      "from": "equal",
+      "name": "balista",
+      "coordinate": {
+        "x": -106,
+        "y": 165,
+        "z": -101
+      },
+      "renderName": false
+    },
+    {
+      "from": "equal",
+      "name": "shop",
+      "coordinate": {
+        "x": -93,
+        "y": 161,
+        "z": -143
+      },
+      "renderName" : false
+    }
+  ]
+}
