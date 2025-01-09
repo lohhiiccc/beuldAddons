@@ -60,7 +60,7 @@ registerWhen(
         piles.forEach(pile => {
             if (!pile.done) {
                 const diff = pile.progress * 0.01;
-                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 0, 1, true);
+                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 100, 1, true);
             }
         });
     }), () => Settings.hilightPileToggle && getKPhase() === Phase.BUILD
@@ -71,3 +71,7 @@ registerWhen(
         drawTitle(buildProgress, " ");
     }), () =>(location.getWorld() === "Kuudra" && (buildProgress !== null))
 );
+
+register("worldLoad", () => {
+    piles = [];
+});

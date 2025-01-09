@@ -3,7 +3,7 @@ import  location from "../location"
 import {squaredDist} from "../math/squaredDistance";
 
 export function getKuudraHP() { return kHP; }
-export function getKPhase() { return kPhase; } // only  supplies skip and dps detected rn
+export function getKPhase() { return kPhase; }
 export function getDpsStartTime() { return dpsStartTime; }
 
 export const Phase = Object.freeze({
@@ -53,6 +53,11 @@ register("chat", () => {
     kPhase = Phase.SUPPLIES;
     console.log("phase = supplies");
 }).setCriteria("[NPC] Elle: Okay adventurers, I will go and fish up Kuudra!")
+
+register("chat", () => {
+    kPhase = Phase.SUPPLIES;
+    console.log("phase = stun");
+}).setCriteria("[NPC] Elle: Phew! The Ballista is finally ready! It should be strong enough to tank Kuudra's blows now!")
 
 register("chat", () => {
     kPhase = Phase.BUILD;
