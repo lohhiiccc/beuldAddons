@@ -44,7 +44,7 @@ registerWhen( // bad way to detect when skip ended
         if (squaredDist(Player.getX(), Player.getY(), Player.getX(), -102, 6, -104) < 50) {
             dpsStartTime = Date.now();
             kPhase = Phase.DPS;
-            console.log("skip ended");
+            // console.log("skip ended");
         }
     }), () => (kPhase === Phase.SKIP)
 )
@@ -53,6 +53,12 @@ register("chat", () => {
     kPhase = Phase.SUPPLIES;
     console.log("phase = supplies");
 }).setCriteria("[NPC] Elle: Okay adventurers, I will go and fish up Kuudra!")
+
+register("chat", () => {
+    kPhase = Phase.BUILD;
+    console.log("phase = build");
+}).setCriteria("[NPC] Elle: OMG! Great work collecting my supplies!")
+
 
 register("worldLoad", () => {
     kPhase = Phase.ENDED;
