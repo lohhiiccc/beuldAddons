@@ -28,7 +28,8 @@ register('tick', () => {
             closestEntity = entity[i];
         }
     }
-    buildProgress = closestEntity.getName();
+    const name = closestEntity.getName();
+    buildProgress = name.substring(name.search(': ') + 2, name.length);
 }), () => location.getWorld() === "Kuudra")
 
 registerWhen(
