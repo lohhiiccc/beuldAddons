@@ -23,7 +23,7 @@ const supTab = [
     new SuppliesCoord(supplies.SLASH,      new coord2D(-111, -70), 10),
     new SuppliesCoord(supplies.EQUAL,      new coord2D(-66, -90), 15),
     new SuppliesCoord(supplies.TRIANGLE,   new coord2D(-68, -122), 18),
-    new SuppliesCoord(supplies.SHOP,     new coord2D(-88, -125), 10)
+    new SuppliesCoord(supplies.SHOP,       new coord2D(-88, -125), 10)
 ]
 
 let wp = [];

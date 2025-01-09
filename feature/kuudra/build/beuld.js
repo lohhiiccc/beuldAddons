@@ -33,5 +33,5 @@ register('tick', () => {
 
 registerWhen(
 register("renderOverlay", () => {
-    drawTitle("", buildProgress);
+    drawTitle(buildProgress, " ");
 }), () => location.getWorld() === "Kuudra" && (buildProgress !== null));

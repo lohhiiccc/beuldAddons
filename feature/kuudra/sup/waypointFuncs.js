@@ -59,6 +59,7 @@ export function drawX() {
 export function drawEqual() {
     RenderLib.drawInnerEspBox(-106, 165, -101, 1, 1, 0, 1, 0, 1, true);
     RenderLib.drawInnerEspBox(-93, 161, -143, 0.7, 0.7, 0, 1, 0, 1, true);//
+    // Tessellator.drawString("shop", -94, 162, -144 , 0xff0000, true, 1, false)
     RenderLib.drawEspBox(-65.5, 76, -87.5, 1, 1, 0, 1, 0, 1, false);
 
 }
