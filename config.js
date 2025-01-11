@@ -43,13 +43,6 @@ class Settings {
     })
     dpsFormatterToggle = false;
 
-    @SwitchProperty({
-        name: "BackBone alert",
-        description: "show backbone hit in chat",
-        category: "Kuudra",
-        subcategory: "DPS",
-    })
-    backBoneToggle = false;
 
     @SwitchProperty({
         name: "Pearl Cancel area",

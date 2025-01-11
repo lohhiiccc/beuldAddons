@@ -9,11 +9,15 @@ import {getKPhase, Phase} from "../../../utils/kuudra/getKuudraHp";
 let piles = [];
 let buildProgress = null;
 
+
 registerWhen(
     register('tick', () => {
 
         const entities = World.getAllEntities().filter(entity => entity.getName().removeFormatting().includes("PROGRESS:")); // PROGRESS:
-        if (!entities.length) return;
+        if (!entities.length) {
+            piles = [];
+            return;
+        }
 
         let closestEntity = entities[0];
         let closestSquaredDistance = squaredDist(Player.getX(), Player.getY(), Player.getZ(), closestEntity.getX(), closestEntity.getY(), closestEntity.getZ());
@@ -60,7 +64,7 @@ registerWhen(
         piles.forEach(pile => {
             if (!pile.done) {
                 const diff = pile.progress * 0.01;
-                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 100, 1, true);
+                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 0.5, 0.5, true, 7);
             }
         });
     }), () => Settings.hilightPileToggle && getKPhase() === Phase.BUILD
@@ -75,3 +79,7 @@ registerWhen(
 register("worldLoad", () => {
     piles = [];
 });
+
+register("chat", () => {
+    piles = [];
+}).setCriteria("[NPC] Elle: OMG! Great work collecting my supplies!")
