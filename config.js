@@ -1,6 +1,7 @@
 import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, @SliderProperty , Color } from 'Vigilance';
+import autoRsSettings from "./feature/autoRs/config"
 
-@Vigilant("beuld")
+@Vigilant("beuld", "§3beuld §4addon's")
 class Settings {
 
     @SwitchProperty({
@@ -75,6 +76,16 @@ class Settings {
         subcategory: "supplies",
     })
     supBeaconToggle = false;
+
+    @ButtonProperty({
+        name: "auto rs",
+        description: "configure auto rs (/beuldAutoRs)",
+        category: "auto rs",
+        placeholder: "§3Go!"
+    }) run() {
+        autoRsSettings.openGUI();
+    }
+
 
     constructor() {
         this.initialize(this);
