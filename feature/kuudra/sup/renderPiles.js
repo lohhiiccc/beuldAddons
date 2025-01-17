@@ -18,8 +18,8 @@ class supplie {
         const sdist = twoDSquaredDist(Player.getX(), Player.getZ(), this.x, this.z);
         RenderLib.drawEspBox(this.x + .5, 78.3, this.z + .5, 0.7, 0.7, 1, 0, 0, 1, (sdist < 225));
         if (!this.completed) {
-            let opacity = 1;
-            if (sdist < 100) opacity = Math.max(sdist / 100, 0.5)
+            let opacity = 0.85;
+            if (sdist < 100) opacity = Math.max(sdist / 100, 0.35)
             renderBeaconBeam(this.x, 79, this.z , 1, 0, 0, opacity, true);
         }
     }

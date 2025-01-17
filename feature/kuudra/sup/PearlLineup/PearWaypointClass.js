@@ -40,7 +40,7 @@ export class PearWaypointClass {
         RenderLib.drawInnerEspBox(this.x, this.y, this.z, 1, 1, this.supWaypoint.r, this.supWaypoint.g, this.supWaypoint.b, 1, true);
         if (this.name === null || this.name === undefined || this.name === "") return;
         if (this.rname) {
-            Tessellator.drawString(this.name, this.x, this.y, this.z, 0xff0000, false, 1, false);
+            Tessellator.drawString(this.name, this.x, this.y, this.z, 0xffcf00, false, 1, false);
         }
     }
 }
