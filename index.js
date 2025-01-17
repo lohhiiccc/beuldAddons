@@ -9,4 +9,7 @@ import "./feature/kuudra/sup/pc"
 
 import "./feature/kuudra/sup/PearlLineup/renderWaypoint"
 
+
+import "./feature/kuudra/sup/renderPiles"
+
 register("command", () => Settings.openGUI()).setName("beuld");

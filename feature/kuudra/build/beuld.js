@@ -1,6 +1,6 @@
 import renderBeaconBeam from "../../../../BeaconBeam/index"
 import Settings from "../../../config";
-import {squaredDist} from "../../../utils/math/squaredDistance";
+import {squaredDist, twoDSquaredDist} from "../../../utils/math/squaredDistance";
 import location from "../../../utils/location";
 import {drawTitle} from "../../../utils/render/customTitle";
 import {registerWhen} from "../../../../BloomCore/utils/Utils"
@@ -64,7 +64,10 @@ registerWhen(
         piles.forEach(pile => {
             if (!pile.done) {
                 const diff = pile.progress * 0.01;
-                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 0.5, 0.5, true, 7);
+                const sdist = twoDSquaredDist(pile.x, pile.z, Player.getX(), Player.getZ());
+                const opacity = Math.max(sdist / 50, 0.7)
+
+                renderBeaconBeam(pile.x, 79, pile.z, 1 - diff, diff, 0.1, opacity, true, 7);
             }
         });
     }), () => Settings.hilightPileToggle && getKPhase() === Phase.BUILD

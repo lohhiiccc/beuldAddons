@@ -68,6 +68,14 @@ class Settings {
     })
     hilightPileToggle = false;
 
+    @SwitchProperty({
+        name: "piles beacon",
+        description: "display beacon at piles",
+        category: "Kuudra",
+        subcategory: "supplies",
+    })
+    supBeaconToggle = false;
+
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("Cosmetic", "")
