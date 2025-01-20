@@ -59,7 +59,7 @@ class autoRsSettings {
     @SliderProperty({
         name: "downtime (seconds)",
         description: "downtime in second between two run",
-        min: 7,
+        min: 1,
         max: 30,
         placeholder: 7,
         category: "Dungeon",
@@ -69,7 +69,7 @@ class autoRsSettings {
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("Kuudra", "§4§lKuudra §r§aauto restart settings")
-        this.setCategoryDescription("Dungeon", "§4§lDungeon §r§aauto restart settings")
+        this.setCategoryDescription("Dungeon", "§4§lDungeon §r§aauto restart settings§r§7 (not implemented yet)")
     }
 
 }
