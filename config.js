@@ -1,4 +1,4 @@
-import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, @SliderProperty , Color } from 'Vigilance';
+import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, @SliderProperty, @ParagraphProperty, Color } from 'Vigilance';
 import autoRsSettings from "./feature/autoRs/config"
 
 @Vigilant("beuld", "§3beuld §4addon's")
@@ -86,11 +86,28 @@ class Settings {
         autoRsSettings.openGUI();
     }
 
+    @SwitchProperty({
+        name: "Clickable social message",
+        description: "run /pv by clicking on social message",
+        category: "Social",
+    })
+    ClickableSocial = false;
+
+    @ParagraphProperty({
+        name: "/fo",
+        description: "",
+        category: "Social"
+    })
+    foDesc = "show online friend";
 
     constructor() {
         this.initialize(this);
         this.setCategoryDescription("Cosmetic", "")
         this.setSubcategoryDescription("Cosmetic", "Aspect of the void", "")
+        this.setSubcategoryDescription("Cosmetic", "friend menu", "")
+
+        this.setCategoryDescription("Social", "")
+
 
         this.setCategoryDescription("Kuudra", "kuudra stuff")
         this.setSubcategoryDescription("kuudra", "supplies", "")
