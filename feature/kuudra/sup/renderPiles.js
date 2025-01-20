@@ -15,9 +15,9 @@ class supplie {
 
 
     render() {
-        const sdist = twoDSquaredDist(Player.getX(), Player.getZ(), this.x, this.z);
-        RenderLib.drawEspBox(this.x + .5, 78.3, this.z + .5, 0.7, 0.7, 1, 0, 0, 1, (sdist < 225));
+        RenderLib.drawEspBox(this.x + .5, 78.3, this.z + .5, 0.7, 0.7, 1, 0, 0, 1, Player.getY() > 78);
         if (!this.completed) {
+            const sdist = twoDSquaredDist(Player.getX(), Player.getZ(), this.x, this.z);
             let opacity = 0.85;
             if (sdist < 100) opacity = Math.max(sdist / 100, 0.35)
             renderBeaconBeam(this.x, 79, this.z , 1, 0, 0, opacity, true);
@@ -51,7 +51,7 @@ register("step", () => {
             if (~~entity.getX() === pile.x && ~~entity.getZ() === pile.z) pile.completed = true;
         })
     })
-}).setFps(3), () => getKPhase() === Phase.SUPPLIES && Settings.supBeaconToggle)
+}).setFps(5), () => getKPhase() === Phase.SUPPLIES && Settings.supBeaconToggle)
 
 
 
