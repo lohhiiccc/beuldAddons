@@ -41,7 +41,7 @@ register("worldLoad", () =>  {
     })
 });
 
-// contain : SUPPLIES RECEIVED
+// source: nwjn addons
 registerWhen(
 register("step", () => {
     const endedPiles = World.getAllEntitiesOfType(Java.type('net.minecraft.entity.item.EntityArmorStand').class).filter(armorStand => armorStand.getName().includes("SUPPLIES RECEIVED"))

@@ -16,6 +16,7 @@ export const Phase = Object.freeze({
 });
 
 
+//source: volcaddons https://github.com/zhenga8533/VolcAddons/blob/main/features/kuudra/KuudraDetect.js
 let cubesTab = 0;
 let kHP = 0;
 let kPhase = 0;

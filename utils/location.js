@@ -1,7 +1,6 @@
 import {delay} from "./delay";
 
 //from https://github.com/zhenga8533/VolcAddons/tree/main
-
 class Location {
     #world = undefined;
     #zone = undefined;

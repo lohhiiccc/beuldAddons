@@ -15,6 +15,7 @@ function colorPull(damage) {
     return "&f";
 }
 
+// source: Chearys https://github.com/chearys/chearys-public/blob/main/features/kuudra/rend.js
 let health = 24999;
 registerWhen(register('packetReceived', () => {
     try {
