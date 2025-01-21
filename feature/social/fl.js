@@ -6,6 +6,7 @@ let isFoRunning = false;
 register("command", () => {
     isFoRunning = true
     ChatLib.command("friend list")
+    ChatLib.chat("&9&m-----------------------------------------------------&r&9")
 }).setName("fo")
 
 const nbPageRegex = /Friends \(Page (\d+) of (\d+)\)/
@@ -31,10 +32,13 @@ register("chat", (msg, event) => {
         }
 
         const split = f.split(" ")
-        const msg = new Message(new TextComponent(`${split[0]} &a⇾&e ${(split.splice(1).join(" "))}`).setClick("run_command", `/pv ${split[0].removeFormatting()}`).setHover("show_text", `&d/pv ${split[0]}`));
+        const unformatedName = split[0].removeFormatting();
+        const msg = new Message(new TextComponent(`&9[+]&r `).setClick("run_command", `/party invite ${unformatedName}`).setHover("show_text", `&9/p ${split[0]}`)).addTextComponent(new TextComponent(`${split[0]} &a⇾&e ${(split.splice(1).join(" ").replace(" Master Mode The Catacombs -", ""))}`).setClick("run_command", `/pv ${unformatedName}`).setHover("show_text", `&d/pv ${split[0]}`));
         msg.chat()
     })
     if (isFoRunning)
         ChatLib.command(`friend list ${parseInt(nbPageM[1]) + 1}`)
+    else
+        ChatLib.chat("&9&m-----------------------------------------------------&r&9")
 }).setCriteria("&9&m-----------------------------------------------------&r&9\n" + "${msg}")
 
