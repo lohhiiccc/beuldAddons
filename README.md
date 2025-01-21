@@ -1,60 +1,60 @@
 
-# beuld addon's
+# beuld addon
 ### [ChatTriger](https://www.chattriggers.com/) module for [hypixel](hypixel.net) - [skybock](wiki.hypixel.net)
 
-this module add some QOL feature based on my activitie in this game like:
- - kuudra
- - dungeon
- - some other tings
+this module adds some QOL features based on my activities in this game, such as:
+ - Kuudra
+ - Dungeon
+ - other things
 
-## features:
+## Features:
 <h4>
 <details><summary>Etherwarp sound</summary>
 
-customizable Etherwarp sound
+Customizable Etherwarp sound
 
 </details>
 <details><summary>social</summary>
 
-make join/leave guild/friend message clickable to add /pv.
+Make join/leave guild/friend messages clickable to add /pv.
  
 </details>
 <details><summary>pc area</summary>
 
-not very usefully except some case on slash
+Not very useful except in some cases on slash
 
 <img src="asset/readme/pc.png" alt="pc">
 </details>
 <details><summary>pearl waypoint</summary>
 
-pearl lineup waypoint depend on your position. example if your at tri the module stop rendering square waypoint
-some waypoint can be added in one of those files: [PearlWaypoint](./feature/kuudra/sup/PearlLineup/PearlWaypoint.json), [SuppWaypoint](./feature/kuudra/sup/PearlLineup/SuppWaypoint.json) 
+pearl lineup waypoint depends on your position. For example, if you are at tri, the module stops rendering square waypoints
+Some waypoints can be added in one of these files: [PearlWaypoint](./feature/kuudra/sup/PearlLineup/PearlWaypoint.json), [SuppWaypoint](./feature/kuudra/sup/PearlLineup/SuppWaypoint.json) 
 </details>
 
 
 <details><summary>beacon at ballista piles (p1)</summary>
 
-todo : insert screen
+TODO: insert screen
 
 </details>
 <details><summary>beacon at ballista piles (p2)</summary>
 
-todo : insert screen
+TODO: insert screen
 
 </details>
-<details><summary>display closest piles percentage</summary>
+<details><summary>Display closest piles percentage</summary>
 
 /title closest pile percentage
 
 </details>
 <details><summary>rend info</summary>
 
-display rend pull in chat
+Display rend pull in chat
 <img src="asset/readme/rend.png" alt="pc">
 </details>
-<details><summary>format mana drain</summary>
+<details><summary>Format mana drain</summary>
 
-<br>todo: insert screen
+<br>TODO: insert screen
 
 <img src="asset/readme/rend.png" alt="pc">
 </details>
@@ -62,15 +62,15 @@ display rend pull in chat
 
 ### Auto restart
 
- - Auto restart: 
-   - auto start kuudra or dg at the end of a run (can config downtime)
-   - `!dt` party chat command automatically stop auto mode
+ - Auto Restart: 
+   - Automatically start Kuudra or DG at the end of a run (configurable downtime)
+   - `!dt` party chat command automatically stops auto mode
 
 ## Commands:
-- `/beuld` - open the main config menu
-- `/beuldautors [<dg/kuudra> <on/off>](optional)` - open auto restart config or toggle auto rs
-- `/fo` - show all online friend(s)
-- alias: 
+- `/beuld` - Open the main config menu
+- `/beuldautors [<dg/kuudra> <on/off>](optional)` - Open auto restart config or toggle auto rs
+- `/fo` - Show all online friend(s)
+- Aliases: 
   - `/t5` -> `/join_instance KUUDRA_INFERNAL`
   - `/t4` -> `/join_instance KUUDRA_FIERY` 
   - `/t3` -> `/join_instance KUUDRA_BURNING` 
@@ -85,7 +85,7 @@ display rend pull in chat
 - [BeaconBeam](https://www.chattriggers.com/modules/v/BeaconBeam)
 
 ## Credit:
-### many features of this module are inspired by other module or mod like
+### Many features of this module are inspired by other module or mod like
  - odin, chearys (don't cheat, it's bad)
  - nwjn or volcaddons
-#### in the case a part of code does is not my own it will be notified in the code
+#### In the case a part of code does is not my own it will be notified in the code
