@@ -1,9 +1,9 @@
 import Settings from "../config"
-import { keyBind } from "../utils/keyBind"
+import { data } from "../utils/data"
 
-const bindKey = new KeyBind("gfs ender pearl", keyBind.gfsPearl, "beuld");
+const bindKey = new KeyBind("gfs ender pearl", data.KBgfsPearl, "beuld");
 register("gameUnload", () => {
-    keyBind.gfsPearl = bindKey.getKeyCode();
+    data.KBgfsPearl = bindKey.getKeyCode();
 }).setPriority(Priority.HIGHEST);
 
 // same than skyhanni but cant q more than one stack
