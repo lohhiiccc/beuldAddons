@@ -14,6 +14,11 @@ this module adds some QOL features based on my activities in this game, such as:
 Customizable Etherwarp sound
 
 </details>
+<details><summary>gfs ender pearl keybind</summary>
+
+keybind to give from sack x ender pearl (prevent cooldown)
+
+</details>
 <details><summary>social</summary>
 
 Make join/leave guild/friend messages clickable to add /pv.
@@ -83,6 +88,7 @@ Display rend pull in chat
 - [Vigilance](https://www.chattriggers.com/modules/v/Vigilance)
 - [RenderLib](https://www.chattriggers.com/modules/v/RenderLib)
 - [BeaconBeam](https://www.chattriggers.com/modules/v/BeaconBeam)
+- [PogData](https://www.chattriggers.com/modules/v/PogData)
 
 ## Credit:
 ### Many features of this module are inspired by other module or mod like

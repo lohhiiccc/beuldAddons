@@ -44,7 +44,7 @@ class Settings {
         const AutorsMaxLength = Math.max(...GeneralDesc.map(l => Renderer.getStringWidth(l)))
         this.setCategoryDescription("Auto rs", AutoRsDesc.map(line => line !== "" ? padText(line + "&0", " ", AutorsMaxLength) : line).join("\n"))
         this.setCategoryDescription("Kuudra", "kuudra stuff")
-
+        this.setSubcategoryDescription("General", "gfs", "choose keybind in MC settings")
     }
     @SwitchProperty({
         name: "Etherwarp sound",
@@ -115,7 +115,7 @@ class Settings {
         name: "Piles beacon",
         description: "display beacon at piles",
         category: "Kuudra",
-        subcategory: "supplies",
+        subcategory: "Supplies",
     })
     supBeaconToggle = false;
 
@@ -136,6 +136,15 @@ class Settings {
     })
     ClickableSocial = false;
 
-
+    @SliderProperty({
+        name: "gfs x ender_pearl ",
+        description: "select amount of pearl",
+        min: 1,
+        max: 16,
+        placeholder: 16,
+        category: "General",
+        subcategory: "gfs",
+    })
+    gfsPearl= 16;
 }
 export default new Settings();
