@@ -3,6 +3,8 @@ import autoRsSettings from "./config"
 import Party from "../../../BloomCore/Party"
 import {getKuudraTiersString} from "../../utils/kuudra/getKuudraTiers";
 
+import "./beuldAutoRscommand"
+
 // NEED: Party > (optional rank) (name): (optional whitespace)(some command prefix)(dt)(optional reason)
 const dtRegex = /^Party > (\[[\w+]+\] )*[\w_]+: \s*[!.?]*dt.*/
 register("chat", () => {
@@ -31,4 +33,3 @@ register("chat", (message) => {
 /*---------*/
 /* dungeon */
 
-register("command", () => autoRsSettings.openGUI()).setName("beuldAutoRs");
