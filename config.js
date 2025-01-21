@@ -1,20 +1,62 @@
 import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, @SliderProperty, @ParagraphProperty, Color } from 'Vigilance';
+import { padText } from "../BloomCore/utils/Utils"
+
 import autoRsSettings from "./feature/autoRs/config"
 
-@Vigilant("beuld", "§3beuld §4addon's")
+@Vigilant("beuld", "§3beuld §4addon's", {
+    getCategoryComparator: () => (a, b) => {
+        const categories = ["General", "Kuudra", "Auto rs"];
+        return categories.indexOf(a.name) - categories.indexOf(b.name);
+     }
+})
 class Settings {
 
+    constructor() {
+        this.initialize(this);
+
+        const GeneralDesc = [
+            "",
+            "&a&l/t1 &rstart Kuudra basic tier.",
+            "&a&l/t2 &rstart Kuudra hot tier.",
+            "&a&l/t3 &rstart Kuudra burning tier.",
+            "&a&l/t4 &rstart Kuudra fiery tier.",
+            "&a&l/t5 &rstart Kuudra infernal tier.",
+            "",
+            "&a&l/fo &rshow all online friend in chat.",
+            "",
+        ]
+        const GeneralMaxLength = Math.max(...GeneralDesc.map(l => Renderer.getStringWidth(l)))
+        this.setCategoryDescription("General",
+            `
+            &l&n&3beuld
+            
+            ${GeneralDesc.map(line => line !== "" ? padText(line + "&0", ".", GeneralMaxLength) : line).join("\n")}
+            
+            `)
+        const AutoRsDesc = [
+            "",
+            "&a&l/beuldAutors &r",
+            "",
+            "&6&l&n!WARNING!&r",
+            "&k  &r&8&lThis feature is currently in beta and may not work as expected&k  &r",
+            ""
+        ]
+        const AutorsMaxLength = Math.max(...GeneralDesc.map(l => Renderer.getStringWidth(l)))
+        this.setCategoryDescription("Auto rs", AutoRsDesc.map(line => line !== "" ? padText(line + "&0", " ", AutorsMaxLength) : line).join("\n"))
+        this.setCategoryDescription("Kuudra", "kuudra stuff")
+
+    }
     @SwitchProperty({
-        name: "etherwarp sound",
+        name: "Etherwarp sound",
         description: "edit etherwarp sound.",
-        category: "Cosmetic",
+        category: "General",
         subcategory: "Aspect of the void",
     })
     AotvSoundToggle = false;
     @TextProperty({
-        name: "custom etherwarp sound",
+        name: "Custom etherwarp sound",
         description: "use minecraft sound id",
-        category: "Cosmetic",
+        category: "General",
         subcategory: "Aspect of the void",
         placeholder: "random.successful_hit"
     })
@@ -24,12 +66,12 @@ class Settings {
         name: "Build indicator",
         description: "display current piles percentage",
         category: "Kuudra",
-        subcategory: "beuld",
+        subcategory: "Build",
     })
     beuldIndicator = false;
 
     @SwitchProperty({
-        name: "rend pull",
+        name: "Rend pull",
         description: "show rend pull",
         category: "Kuudra",
         subcategory: "DPS",
@@ -49,28 +91,28 @@ class Settings {
         name: "Pearl Cancel area",
         description: "show some pearl cancel area",
         category: "Kuudra",
-        subcategory: "supplies",
+        subcategory: "Supplies",
     })
     PCAreaToggle = false;
 
     @SwitchProperty({
-        name: "pearl waypoint",
+        name: "Pearl waypoint",
         description: "display only useful pearl waypoint",
         category: "Kuudra",
-        subcategory: "supplies",
+        subcategory: "Supplies",
     })
     pearlwaypointtoggle = false;
 
     @SwitchProperty({
-        name: "hilight pile",
+        name: "Highlight pile",
         description: "hilight supply pile",
         category: "Kuudra",
-        subcategory: "build",
+        subcategory: "Build",
     })
     hilightPileToggle = false;
 
     @SwitchProperty({
-        name: "piles beacon",
+        name: "Piles beacon",
         description: "display beacon at piles",
         category: "Kuudra",
         subcategory: "supplies",
@@ -78,9 +120,9 @@ class Settings {
     supBeaconToggle = false;
 
     @ButtonProperty({
-        name: "auto rs",
+        name: "Auto rs",
         description: "configure auto rs (/beuldAutoRs)",
-        category: "auto rs",
+        category: "Auto rs",
         placeholder: "§3Go!"
     }) run() {
         autoRsSettings.openGUI();
@@ -89,30 +131,11 @@ class Settings {
     @SwitchProperty({
         name: "Clickable social message",
         description: "run /pv by clicking on social message",
-        category: "Social",
+        category: "General",
+        subcategory: "Social",
     })
     ClickableSocial = false;
 
-    @ParagraphProperty({
-        name: "/fo",
-        description: "",
-        category: "Social"
-    })
-    foDesc = "show online friend";
 
-    constructor() {
-        this.initialize(this);
-        this.setCategoryDescription("Cosmetic", "")
-        this.setSubcategoryDescription("Cosmetic", "Aspect of the void", "")
-        this.setSubcategoryDescription("Cosmetic", "friend menu", "")
-
-        this.setCategoryDescription("Social", "")
-
-
-        this.setCategoryDescription("Kuudra", "kuudra stuff")
-        this.setSubcategoryDescription("kuudra", "supplies", "")
-        this.setSubcategoryDescription("Kuudra", "build", "")
-        this.setSubcategoryDescription("Kuudra", "DPS", "")
-    }
 }
 export default new Settings();
