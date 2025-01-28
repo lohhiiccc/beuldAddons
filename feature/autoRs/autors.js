@@ -22,7 +22,7 @@ register("chat", (message) => {
     if (message !== kuudraDown) return;
     if (!autoRsSettings.isAutoRsRunningK) return;
     setTimeout(() => {
-        if (autoRsSettings.isAutoRsRunningK && Party.leader === Player.getName() && Party.members?.length === 3) {
+        if (autoRsSettings.isAutoRsRunningK && Party.leader === Player.getName() && Object.keys(Party.members).length === 4) {
             ChatLib.command(`/joininstance ${getKuudraTiersString(autoRsSettings.autoRsTiersK)}`);
         }
     }, autoRsSettings.autoRsDowntimeK * 1000)
