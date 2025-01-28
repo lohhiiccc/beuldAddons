@@ -7,7 +7,6 @@ import {registerWhen} from "../../../../BloomCore/utils/Utils"
 import {getKPhase, Phase} from "../../../utils/kuudra/getKuudraHp";
 
 let piles = [];
-let buildProgress = null;
 
 
 registerWhen(
@@ -44,17 +43,6 @@ registerWhen(
             }
         });
 
-        switch (Settings.beuldIndicator) {
-            case true:
-                const name = closestEntity.getName().removeFormatting();
-                const progressMatch = name.match(/PROGRESS: (\d+)%/);
-                buildProgress = progressMatch ? `&a${progressMatch[1]}` : null;
-                break;
-            default:
-                buildProgress = null;
-                break
-        }
-
 
     }), () => (location.getWorld() === "Kuudra" && getKPhase() === Phase.BUILD)
 );
@@ -71,12 +59,6 @@ registerWhen(
             }
         });
     }), () => Settings.hilightPileToggle && getKPhase() === Phase.BUILD
-);
-
-registerWhen(
-    register("renderOverlay", () => {
-        drawTitle(buildProgress, " ");
-    }), () =>(location.getWorld() === "Kuudra" && (buildProgress !== null))
 );
 
 register("worldLoad", () => {

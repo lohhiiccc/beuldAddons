@@ -63,18 +63,10 @@ class Settings {
     AotvSound = "random.successful_hit";
 
     @SwitchProperty({
-        name: "Build indicator",
-        description: "display current piles percentage",
-        category: "Kuudra",
-        subcategory: "Build",
-    })
-    beuldIndicator = false;
-
-    @SwitchProperty({
         name: "Rend pull",
         description: "show rend pull",
         category: "Kuudra",
-        subcategory: "DPS",
+        subcategory: "4.DPS",
     })
     rendPullToggle = false;
 
@@ -82,7 +74,7 @@ class Settings {
         name: "DPS format",
         description: "format chat during DPS in kuudra",
         category: "Kuudra",
-        subcategory: "DPS",
+        subcategory: "4.DPS",
     })
     dpsFormatterToggle = false;
 
@@ -91,7 +83,7 @@ class Settings {
         name: "Pearl Cancel area",
         description: "show some pearl cancel area",
         category: "Kuudra",
-        subcategory: "Supplies",
+        subcategory: "1.Supplies",
     })
     PCAreaToggle = false;
 
@@ -99,7 +91,7 @@ class Settings {
         name: "Pearl waypoint",
         description: "display only useful pearl waypoint",
         category: "Kuudra",
-        subcategory: "Supplies",
+        subcategory: "1.Supplies",
     })
     pearlwaypointtoggle = false;
 
@@ -107,15 +99,23 @@ class Settings {
         name: "Highlight pile",
         description: "hilight supply pile",
         category: "Kuudra",
-        subcategory: "Build",
+        subcategory: "2.Build",
     })
     hilightPileToggle = false;
+
+    @SwitchProperty({
+        name: "Freesh timer",
+        description: "display freesh timer hover players who have freesh",
+        category: "Kuudra",
+        subcategory: "2.Build"
+    })
+    freeshTimerToggle = false;
 
     @SwitchProperty({
         name: "Piles beacon",
         description: "display beacon at piles",
         category: "Kuudra",
-        subcategory: "Supplies",
+        subcategory: "1.Supplies",
     })
     supBeaconToggle = false;
 
@@ -126,6 +126,15 @@ class Settings {
         placeholder: "§3Go!"
     }) run() {
         autoRsSettings.openGUI();
+    }
+
+    @ButtonProperty({
+        name: "hit phase timer",
+        description: "comming soon",
+        category: "Kuudra",
+        subcategory: "3.stun",
+        placeholder: "§3do Nothing!"
+    }) donothing() {
     }
 
     @SwitchProperty({

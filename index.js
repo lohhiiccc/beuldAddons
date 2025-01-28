@@ -14,4 +14,6 @@ import "./feature/social/fl"
 import "./feature/social/clickablesSocial"
 import "./feature/pearl"
 
+import "./feature/kuudra/build/fresh"
+
 register("command", () => Settings.openGUI()).setName("beuld")
