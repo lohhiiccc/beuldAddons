@@ -21,6 +21,7 @@ const kuudraDown = "&r&f                               &r&6&lKUUDRA DOWN!&r";
 register("chat", (message) => {
     if (message !== kuudraDown) return;
     if (!autoRsSettings.isAutoRsRunningK) return;
+    if (autoRsSettings.autoRsAnnounceK) ChatLib.command(`pc restart in ${autoRsSettings.autoRsDowntimeK}s!`);
     setTimeout(() => {
         if (autoRsSettings.isAutoRsRunningK && Party.leader === Player.getName() && Object.keys(Party.members).length === 4) {
             ChatLib.command(`/joininstance ${getKuudraTiersString(autoRsSettings.autoRsTiersK)}`);
