@@ -56,7 +56,7 @@ register("chat", () => {
 }).setCriteria("[NPC] Elle: Okay adventurers, I will go and fish up Kuudra!")
 
 register("chat", () => {
-    kPhase = Phase.SUPPLIES;
+    kPhase = Phase.STUN;
     console.log("phase = stun");
 }).setCriteria("[NPC] Elle: Phew! The Ballista is finally ready! It should be strong enough to tank Kuudra's blows now!")
 

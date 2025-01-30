@@ -1,8 +1,6 @@
 import renderBeaconBeam from "../../../../BeaconBeam/index"
 import Settings from "../../../config";
 import {squaredDist, twoDSquaredDist} from "../../../utils/math/squaredDistance";
-import location from "../../../utils/location";
-import {drawTitle} from "../../../utils/render/customTitle";
 import {registerWhen} from "../../../../BloomCore/utils/Utils"
 import {getKPhase, Phase} from "../../../utils/kuudra/getKuudraHp";
 
@@ -13,7 +11,7 @@ registerWhen(
     register('tick', () => {
 
         const entities = World.getAllEntities().filter(entity => entity.getName().removeFormatting().includes("PROGRESS:")); // PROGRESS:
-        if (!entities.length) {
+        if (0 === entities.length) {
             piles = [];
             return;
         }
@@ -44,7 +42,7 @@ registerWhen(
         });
 
 
-    }), () => (location.getWorld() === "Kuudra" && getKPhase() === Phase.BUILD)
+    }), () => getKPhase() === Phase.BUILD
 );
 
 registerWhen(
