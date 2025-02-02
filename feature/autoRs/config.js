@@ -102,7 +102,6 @@ class autoRsSettings {
     })
     autoRsAnnounceD = false;
 
-
 }
 
 export default new autoRsSettings();

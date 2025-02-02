@@ -13,7 +13,8 @@ import "./feature/t5Command"
 import "./feature/social/fl"
 import "./feature/social/clickablesSocial"
 import "./feature/pearl"
-
 import "./feature/kuudra/build/fresh"
+
+import "./feature/kuudra/sup/noPreOverlay"
 
 register("command", () => Settings.openGUI()).setName("beuld")

@@ -45,7 +45,14 @@ class Settings {
         this.setCategoryDescription("Auto rs", AutoRsDesc.map(line => line !== "" ? padText(line + "&0", " ", AutorsMaxLength) : line).join("\n"))
         this.setCategoryDescription("Kuudra", "kuudra stuff")
         this.setSubcategoryDescription("General", "gfs", "choose keybind in MC settings")
+
+        this.addDependency("Custom etherwarp sound", "Etherwarp sound")
+        this.addDependency("move missing supplies", "Missing supplie Gui")
     }
+
+    missingSuppliesMove = new Gui()
+
+
     @SwitchProperty({
         name: "Etherwarp sound",
         description: "edit etherwarp sound.",
@@ -155,5 +162,22 @@ class Settings {
         subcategory: "gfs",
     })
     gfsPearl= 16;
+
+    @SwitchProperty({
+        name: "Missing supplie Gui",
+        description: "show a gui with missing supplies",
+        category: "Kuudra",
+        subcategory: "1.Supplies"
+    })
+    missingSuppliesToggle = false;
+    @ButtonProperty({
+        name: "move missing supplies",
+        description: "",
+        category: "Kuudra",
+        subcategory: "1.Supplies",
+        placeholder: "§3Edit!"
+    }) MoveMissingSupplies() {
+        this.missingSuppliesMove.open()
+    }
 }
 export default new Settings();
