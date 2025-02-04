@@ -48,6 +48,10 @@ class Settings {
 
         this.addDependency("Custom etherwarp sound", "Etherwarp sound")
         this.addDependency("move missing supplies", "Missing supplie Gui")
+
+        this.addDependency("Pearl cancel area", "Improve supplies render")
+        this.addDependency("Beacon", "Improve supplies render")
+        this.addDependency("Render box", "Improve supplies render")
     }
 
     missingSuppliesMove = new Gui()
@@ -87,7 +91,31 @@ class Settings {
 
 
     @SwitchProperty({
-        name: "Pearl Cancel area",
+        name: "Improve supplies render",
+        description: "display beacon at supplies",
+        category: "Kuudra",
+        subcategory: "1.Supplies",
+    })
+    suppliesBeaconMainToggle = false;
+
+    @SwitchProperty({
+        name: "Beacon",
+        description: "render beacon at supplies",
+        category: "Kuudra",
+        subcategory: "1.Supplies",
+    })
+    suppliesBeaconToggle = false;
+
+    @SwitchProperty({
+        name: "Render box",
+        description: "render box at supplies",
+        category: "Kuudra",
+        subcategory: "1.Supplies",
+    })
+    suppliesBoxToggle = false;
+
+    @SwitchProperty({
+        name: "Pearl cancel area",
         description: "show some pearl cancel area",
         category: "Kuudra",
         subcategory: "1.Supplies",
