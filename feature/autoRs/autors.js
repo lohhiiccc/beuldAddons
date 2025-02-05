@@ -8,7 +8,6 @@ import "./beuldAutoRscommand"
 // NEED: Party > (optional rank) (name): (optional whitespace)(some command prefix)(dt)(optional reason)
 const dtRegex = /^Party > (\[[\w+]+\] )*[\w_]+: \s*[!.?]*dt.*/
 register("chat", () => {
-    console.log(`dt regex match party leader: ${Party.leader}`);
     if (Party.leader !== Player.getName()) return;
     if (autoRsSettings.isAutoRsRunningD || autoRsSettings.isAutoRsRunningK) {
         autoRsSettings.isAutoRsRunningK = false;
@@ -17,9 +16,7 @@ register("chat", () => {
     }
 }).setCriteria(dtRegex)
 
-const kuudraDown = "&r&f                               &r&6&lKUUDRA DOWN!&r";
 register("chat", (message) => {
-    if (message !== kuudraDown) return;
     if (!autoRsSettings.isAutoRsRunningK) return;
     if (autoRsSettings.autoRsAnnounceK) ChatLib.command(`pc restart in ${autoRsSettings.autoRsDowntimeK}s!`);
     setTimeout(() => {
@@ -29,7 +26,7 @@ register("chat", (message) => {
     }, autoRsSettings.autoRsDowntimeK * 1000)
 
     console.log(message);
-})
+}).setCriteria(/^\s+KUUDRA DOWN!/)
 
 /*---------*/
 /* dungeon */
