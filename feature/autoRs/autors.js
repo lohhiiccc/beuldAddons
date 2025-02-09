@@ -24,8 +24,6 @@ register("chat", (message) => {
             ChatLib.command(`joininstance ${getKuudraTiersString(autoRsSettings.autoRsTiersK)}`);
         }
     }, autoRsSettings.autoRsDowntimeK * 1000)
-
-    console.log(message);
 }).setCriteria(/^\s+KUUDRA DOWN!/)
 
 /*---------*/

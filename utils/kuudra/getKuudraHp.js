@@ -6,6 +6,8 @@ export function getKuudraHP() { return kHP; }
 export function getKPhase() { return kPhase; }
 export function getDpsStartTime() { return dpsStartTime; }
 
+export function runStartT() { return runStartTime; }
+
 export const Phase = Object.freeze({
     ENDED: -1,
     SUPPLIES: 0,
@@ -21,6 +23,7 @@ let cubesTab = 0;
 let kHP = 0;
 let kPhase = 0;
 let dpsStartTime = 0;
+let runStartTime = Date.now();
 registerWhen(
     register("tick", () => {
         cubesTab = World.getAllEntitiesOfType(Java.type('net.minecraft.entity.monster.EntityMagmaCube').class); //get all magma cube
@@ -52,6 +55,7 @@ registerWhen( // bad way to detect when skip ended
 
 register("chat", () => {
     kPhase = Phase.SUPPLIES;
+    runStartTime = Date.now();
     console.log("phase = supplies");
 }).setCriteria("[NPC] Elle: Okay adventurers, I will go and fish up Kuudra!")
 

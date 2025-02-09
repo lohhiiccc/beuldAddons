@@ -1,6 +1,5 @@
 import Settings from "./config"
 
-
 import "./feature/aotv"
 import "./feature/kuudra/build/beuld"
 import "./feature/kuudra/dps/rend"
@@ -14,7 +13,8 @@ import "./feature/social/fl"
 import "./feature/social/clickablesSocial"
 import "./feature/pearl"
 import "./feature/kuudra/build/fresh"
-
 import "./feature/kuudra/sup/noPreOverlay"
+
+import "./feature/kuudra/sup/recoveryTimer"
 
 register("command", () => Settings.openGUI()).setName("beuld")

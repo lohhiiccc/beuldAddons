@@ -16,14 +16,11 @@ function loadSuppWaypoints() {
 
 
         supWpTab = [];
-        // console.log("supWpTab:");
         data.suppWaypoint.forEach((item) => {
             const { x, y, z } = item.coordinate;
             const { r, g, b } = item.color;
             const dist = item.dist;
             const name = item.name;
-            // console.log(item.name, ":");
-            // console.log(x, y, z, r, g, b, dist);
             supWpTab.push(new SuppWaypointArea(x, y, z, r, g, b, dist, name));
         });
     } catch (e) {
@@ -55,7 +52,6 @@ function loadPearlWaypoints() {
                     wpTab.push(new PearWaypointClass(x, y, z, name, supWpTab[i]));
                 }
             }
-            console.log(x, y, z);
         });
     } catch (e) {
         console.error("error:", e);
