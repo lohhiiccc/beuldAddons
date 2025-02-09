@@ -207,5 +207,13 @@ class Settings {
     }) MoveMissingSupplies() {
         this.missingSuppliesMove.open()
     }
+
+    @SwitchProperty({
+        name: "supplies time in chat",
+        description: "&r&b[MVP&r&3+&r&b] lohhiiccc&r&f&r&a&l recovered a supplies at 26.78s! &r&8(5/6)",
+        category: "Kuudra",
+        subcategory: "1.Supplies"
+    })
+    suppliesTimeToggle = false;
 }
 export default new Settings();
