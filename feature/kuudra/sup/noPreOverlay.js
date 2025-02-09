@@ -51,23 +51,29 @@ registerWhen(register("renderOverlay", () => {
 
     const textWidth = Renderer.getStringWidth(missing);
     Renderer.scale(2);
+    let drawX = data.noPreOverlayX;
     switch (data.noPreOverlayAlign) {
         case "center":
-            const centeredX = data.noPreOverlayX - (textWidth * 0.5);
-            Renderer.drawString(missing, centeredX, data.noPreOverlayY, true);
+            drawX = data.noPreOverlayX - (textWidth * 0.5);
             break;
         case "left":
-            Renderer.drawString(missing, data.noPreOverlayX, data.noPreOverlayY, true);
             break;
         case "right":
-            const rightX = data.noPreOverlayX - textWidth;
-            Renderer.drawString(missing, rightX, data.noPreOverlayY, true);
+            drawX = data.noPreOverlayX - textWidth;
             break;
     }
 
+    Renderer.drawString(missing, drawX, data.noPreOverlayY, true);
+
     if (!Settings.missingSuppliesMove.isOpen()) return // config gui code below
+
     Renderer.scale(2);
     Renderer.drawLine(Renderer.RED, 0, data.noPreOverlayY, width, data.noPreOverlayY, 0.5);
     Renderer.scale(2);
     Renderer.drawLine(Renderer.RED, data.noPreOverlayX, 0, data.noPreOverlayX, height, 0.5);
+
+    Renderer.scale(2);
+    Renderer.drawLine(Renderer.GREEN, drawX, data.noPreOverlayY + 4, drawX + textWidth, data.noPreOverlayY + 4, 8, 2); // rectangle
+
+
 }), () => Settings.missingSuppliesToggle && (getKPhase() === Phase.SUPPLIES || Settings.missingSuppliesMove.isOpen()))

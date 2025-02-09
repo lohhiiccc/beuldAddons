@@ -21,7 +21,7 @@ register("chat", (message) => {
     if (autoRsSettings.autoRsAnnounceK) ChatLib.command(`pc restart in ${autoRsSettings.autoRsDowntimeK}s!`);
     setTimeout(() => {
         if (autoRsSettings.isAutoRsRunningK && Party.leader === Player.getName() && Object.keys(Party.members).length === 4) {
-            ChatLib.command(`/joininstance ${getKuudraTiersString(autoRsSettings.autoRsTiersK)}`);
+            ChatLib.command(`joininstance ${getKuudraTiersString(autoRsSettings.autoRsTiersK)}`);
         }
     }, autoRsSettings.autoRsDowntimeK * 1000)
 
